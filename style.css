@@ -6,10 +6,8 @@
 body{
     background-color: rgba(63, 49, 49, 0.486);
     border: none;
-
 }
 #home-section{
-  
    display: flex;
    justify-content: center;
    align-items: center;
@@ -17,7 +15,6 @@ body{
    background-color: rgba(63, 49, 49, 0.486)
 }
 #edit-section{
-
    display: flex;
    justify-content: center;
    align-items: center;
@@ -28,10 +25,12 @@ h1{
     color: rgb(8, 70, 8);
     text-align: center;
     border-bottom:2px solid rgb(8, 70, 8);
+<<<<<<< HEAD
   
 
+=======
+>>>>>>> 09f53c910e5ab7bb80d9ba34bf2f048a24089613
 }
-
 form{
     margin: 10px auto;
     padding: 10px;
@@ -80,16 +79,19 @@ table{
     margin-top: 20px;
     width: 100%;
     border-collapse: collapse;
-
 }
 th,td{
     border: 1px solid white;
     padding: 10px;
     text-align: center;
+<<<<<<< HEAD
 
 }
 
 
+=======
+}
+>>>>>>> 09f53c910e5ab7bb80d9ba34bf2f048a24089613
 #edit-section button{
     cursor: pointer;
     background-color: green;
