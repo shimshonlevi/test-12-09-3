@@ -4,36 +4,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const editSection = document.getElementById('edit-section');
     const homeSection = document.getElementById('home-section');
     let soldiers = JSON.parse(localStorage.getItem('soldiers')) || [];
-
     function renderTable() {
         soldierTable.innerHTML = '';
         soldiers.forEach((soldier, index) => {
             const row = soldierTable.insertRow();
             row.innerHTML = `
-                <td>${soldier.fullName}</td>
-                <td>${soldier.rank}</td>
-                <td>${soldier.role}</td>
-                <td>${soldier.pluga}</td>
-                <td>${soldier.status}</td>
-                <td>${soldier.taskTime}</td>
-                <td>
-                    <button class="edit-button" data-index="${index}">edit</button>
+                <td>${soldier.fullName}</td><td>${soldier.rank}</td><td>${soldier.role}</td><td>${soldier.pluga}</td><td>${soldier.status}</td>
+                <td>${soldier.taskTime}</td><td><button class="edit-button" data-index="${index}">edit</button>
                     <button class="delete-button" data-index="${index}">delete</button>
                     ${soldier.status === 'Active' || soldier.status === 'Reserve' ? `<button class="task-button" data-index="${index}">Mission</button>` : ''}
                 </td>
             `;
         });
-
         document.querySelectorAll('.delete-button').forEach(button => {
             button.addEventListener('click', (e) => {
                 const index = e.target.getAttribute('data-index');
                 soldiers.splice(index, 1);
                 localStorage.setItem('soldiers', JSON.stringify(soldiers));
                 renderTable();
-
             });
         });
-
         document.querySelectorAll('.task-button').forEach(button => {
             button.addEventListener('click', (e) => {
                 const index = e.target.getAttribute('data-index');
@@ -43,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderTable();
             });
         });
-
         document.querySelectorAll('.edit-button').forEach(button => {
             button.addEventListener('click', (e) => {
                 const index = e.target.getAttribute('data-index');
@@ -56,11 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('edit-task-time').value = soldier.taskTime;
                 editSection.style.display = 'block';
                 homeSection.style.display = 'none';
-                document.getElementById('edit')
             });
         });
     }
-
     addSoldierForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const fullName = document.getElementById('full-name').value;
@@ -69,53 +56,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const pluga = document.getElementById('pluga').value;
         const taskTime = document.getElementById('task-time').value;
         const status = document.getElementById('status').value;
-        
         const newSoldier = { fullName, rank, role, pluga, taskTime, status };
         soldiers.push(newSoldier);
         localStorage.setItem('soldiers', JSON.stringify(soldiers));
         renderTable();
         addSoldierForm.reset();
     });
-
     document.getElementById('sort-button').addEventListener('click', () => {
         soldiers.sort((a, b) => a.fullName.localeCompare(b.fullName));
         localStorage.setItem('soldiers', JSON.stringify(soldiers));
         renderTable();
     });
-
     document.getElementById('cancel-edit').addEventListener('click', () => {
         editSection.style.display = 'none';
         homeSection.style.display = 'block';
     });
-
-    if (soldiers.length > 0) {
-        document.querySelectorAll('.task-button').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const index = e.target.getAttribute('data-index');
-                const soldier = soldiers[index];
-                soldier.status = 'Active';
-                localStorage.setItem('soldiers', JSON.stringify(soldiers));
-                renderTable();
-            });
-        });
-
-        document.querySelectorAll('.delete-button').forEach(button => {
-            button.addEventListener('click', (e) => {
-                const index = e.target.getAttribute('data-index');
-                soldiers.splice(index, 1);
-                localStorage.setItem('soldiers', JSON.stringify(soldiers));
-                renderTable();
-
-            });
-        });
-
-    }
-
-
-
-
     renderTable();
 });
-
-
-

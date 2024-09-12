@@ -14,7 +14,6 @@
             <input type="text" id="rank" placeholder="Rank" required>
             <input type="text" id="role" placeholder="Position" required>
             <input type="text" id="pluga" placeholder="Platoon" required>
-            
             <input type="number" id="task-time" placeholder="Mission Time(seconds)" required>
             <select id="status" required>
                 <option value="Active">Active</option>
@@ -37,27 +36,24 @@
                 </tr>
             </thead>
             <tbody>
-
             </tbody>
         </table>
-
     </div>
-    <div id="edit-section" style="display: none;">
+    <div id="edit-section" style="display: none; height: 100vh;">
         <h1>EDIT PERSONNEL</h1>
         <form id="edit-soldier-form">
             <input type="text" id="edit-full-name" placeholder="Full Name" required>
             <input type="text" id="edit-rank" placeholder="Rank" required>
             <input type="text" id="edit-role" placeholder="Position" required>
             <input type="text" id="edit-pluga" placeholder="Platoon" required>
-            
-            <input type="number" id="edit-task-time" placeholder="זמן משימה (דקות)" required>
+            <input type="number" id="edit-task-time" placeholder="Mission Time(seconds)"required>
             <select id="edit-status" required>
                 <option value="Active">Active</option>
                 <option value="Reserve">Reserve</option>
                 <option value="Retired">Retired</option>
             </select>
             <button type="submit">Save</button>
-            <button type="button" id="cancel-edit">cancel</button>
+            <button type="button" id="cancel-edit" style="background-color: red;">cancel</button>
         </form>
     </div>
     <script src="script.js"></script>

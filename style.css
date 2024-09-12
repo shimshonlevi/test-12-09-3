@@ -6,10 +6,8 @@
 body{
     background-color: rgba(63, 49, 49, 0.486);
     border: none;
-
 }
 #home-section{
-  
    display: flex;
    justify-content: center;
    align-items: center;
@@ -17,7 +15,6 @@ body{
    background-color: rgba(63, 49, 49, 0.486)
 }
 #edit-section{
-
    display: flex;
    justify-content: center;
    align-items: center;
@@ -27,10 +24,7 @@ h1{
     color: rgb(8, 70, 8);
     text-align: center;
     border-bottom:2px solid rgb(8, 70, 8);
-    /* width: 100%; */
-
 }
-
 form{
     margin: 10px auto;
     padding: 10px;
@@ -41,7 +35,7 @@ form{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.374);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -55,6 +49,7 @@ input{
     border: none;
     padding: 8px;
     background-color: rgba(0, 0, 0, 0.445);
+    color: white;
 }
 select{
     width: 90%;
@@ -71,23 +66,18 @@ button{
     border: none;
     padding: 10px;
     border-radius: 10px;
+    margin: 5px;
     width:80% ;
 }
 table{
     margin-top: 20px;
     width: 100%;
     border-collapse: collapse;
-
 }
 th,td{
     border: 1px solid white;
     padding: 10px;
     text-align: center;
-
-}
-
-#cancel-edit{
-    background-color: red;
 }
 #edit-section button{
     cursor: pointer;
