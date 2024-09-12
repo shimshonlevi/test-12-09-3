@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const homeSection = document.getElementById('home-section');
     const editSoldierForm = document.getElementById('edit-soldier-form');
     let soldiers = JSON.parse(localStorage.getItem('soldiers')) || [];
+
     function renderTable() {
         soldierTable.innerHTML = '';
         soldiers.forEach((soldier, index) => {
@@ -17,10 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 </td>
             `;
         });
+
         document.querySelectorAll('.delete-button').forEach(button => {
             button.addEventListener('click', (e) => {
                 const index = e.target.getAttribute('data-index');
-<<<<<<< HEAD
                 soldiers.splice(index, 1); 
                 localStorage.setItem('soldiers', JSON.stringify(soldiers)); 
                 renderTable(); 
@@ -28,13 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
   
-=======
-                soldiers.splice(index, 1);
-                localStorage.setItem('soldiers', JSON.stringify(soldiers));
-                renderTable();
-            });
-        });
->>>>>>> 09f53c910e5ab7bb80d9ba34bf2f048a24089613
         document.querySelectorAll('.task-button').forEach(button => {
             button.addEventListener('click', (e) => {
                 const index = e.target.getAttribute('data-index');
@@ -44,11 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderTable();
             });
         });
-<<<<<<< HEAD
 
       
-=======
->>>>>>> 09f53c910e5ab7bb80d9ba34bf2f048a24089613
         document.querySelectorAll('.edit-button').forEach(button => {
             button.addEventListener('click', (e) => {
                 const index = e.target.getAttribute('data-index');
@@ -71,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-<<<<<<< HEAD
 
 
     editSoldierForm.addEventListener('submit', (e) => {
@@ -92,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
         localStorage.setItem('soldiers', JSON.stringify(soldiers));
 
- 
+        // Re-render the table
         renderTable();
 
       
@@ -101,8 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-=======
->>>>>>> 09f53c910e5ab7bb80d9ba34bf2f048a24089613
     addSoldierForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -112,10 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const pluga = document.getElementById('pluga').value;
         const taskTime = document.getElementById('task-time').value;
         const status = document.getElementById('status').value;
-<<<<<<< HEAD
 
-=======
->>>>>>> 09f53c910e5ab7bb80d9ba34bf2f048a24089613
         const newSoldier = { fullName, rank, role, pluga, taskTime, status };
 
         soldiers.push(newSoldier); 
@@ -124,31 +109,20 @@ document.addEventListener('DOMContentLoaded', () => {
         renderTable();
         addSoldierForm.reset(); 
     });
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 09f53c910e5ab7bb80d9ba34bf2f048a24089613
     document.getElementById('sort-button').addEventListener('click', () => {
         soldiers.sort((a, b) => a.fullName.localeCompare(b.fullName)); 
         localStorage.setItem('soldiers', JSON.stringify(soldiers)); 
         renderTable();
     });
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 09f53c910e5ab7bb80d9ba34bf2f048a24089613
     document.getElementById('cancel-edit').addEventListener('click', () => {
         editSection.style.display = 'none';
-        homeSection.style.display = 'block';
+        homeSection.style.display = 'block'; 
     });
-<<<<<<< HEAD
 
   
     renderTable();
 });
-=======
-    renderTable();
-});
->>>>>>> 09f53c910e5ab7bb80d9ba34bf2f048a24089613
